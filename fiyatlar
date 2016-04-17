@@ -1,0 +1,39 @@
+<?php
+
+
+	/* mehmet güncel fındık fiyatları php. */
+	/* 2016 kopyalanamaz çoğaltılamaz */
+		$link			="http://www.carsambatb.org.tr//Default2.aspx";
+
+	/* siteye bağlantı yap */
+
+		$baglan			= file_get_contents($link);
+preg_match_all('@<span id="lblBRUT" class="fiyat">(.*?)</span>@si',$baglan,$brut);
+preg_match_all('@<span id="lblNET" class="fiyat">(.*?)</span>@si',$baglan,$net);
+preg_match_all('@<span id="lblTARIH" class="fiyat">(.*?)</span>@si',$baglan,$tarih);
+/*tarih*/
+$tarih1 = $tarih [0][0];
+$brut1 = $brut [0][0];
+$net1 = $net [0][0];
+
+	
+echo "<pre>";
+	
+	  print_r($tarih1);
+	 	  
+	echo "</pre>";
+echo "<pre>";
+	
+	  print_r($brut1);
+	 	  
+	echo "</pre>";
+	echo "<pre>";
+	
+	  print_r($net1);
+	 	  
+	echo "</pre>";
+	
+	
+	
+	
+?>
